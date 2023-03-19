@@ -1,4 +1,6 @@
 let rowa= document.getElementById("Row")
+let btnClose=document.querySelector(".btn-close")
+console.log(btnClose);
 // fetch meals at home
 let finalResult=[]
 async function getMealAtHome(x) {
@@ -19,15 +21,16 @@ async function getMealAtHome(x) {
         
         const loading = document.querySelector(".loading");
         loading.classList.remove("d-none");
+        rowa.classList.add("d-none")
         let data= await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${x}`)
         
         let result= await data.json();
         finalResult=result.meals.splice(0,20);
         loading.classList.add("d-none");
         console.log( finalResult);
-     
+        rowa.classList.add("d-none")
         showDataAtHome() 
-        
+        rowa.classList.add("d-none")
     }
   
 }
@@ -140,6 +143,7 @@ document.getElementById("Youtube").setAttribute("href",finResultDetailes[0].strY
 
 let Categories=document.getElementById("Categories")
 Categories.addEventListener("click", (e) =>{
+    document.getElementById("regex").classList.add("d-none")
     let width=$(".nav-content").outerWidth(true)
     $(".container-setting").animate({left:`-${width}px`},1000)
     $("#close-base-icon").hide(10)
@@ -219,6 +223,7 @@ function getStrCategory(){
 // data of area
 let Areas=document.getElementById("areas")
 Areas.addEventListener("click", (e) =>{
+    document.getElementById("regex").classList.add("d-none")
     let width=$(".nav-content").outerWidth(true)
     $(".container-setting").animate({left:`-${width}px`},1000)
     $("#close-base-icon").hide(10)
@@ -344,6 +349,7 @@ async function getAreaResult(x) {
     // data of Ingredients
 let Ingredients=document.getElementById("Ingredients")
 Ingredients.addEventListener("click", (e) =>{
+    document.getElementById("regex").classList.add("d-none")
     let width=$(".nav-content").outerWidth(true)
     $(".container-setting").animate({left:`-${width}px`},1000)
     $("#close-base-icon").hide(10)
@@ -484,7 +490,6 @@ let ali=''
         document.getElementById("regex").classList.remove("d-none")
         
         ali=document.getElementById("nameInput") 
-
         
         
     })
@@ -495,6 +500,7 @@ let ali=''
   
     let search=document.getElementById("search")
     search.addEventListener("click",function(){
+        document.getElementById("regex").classList.add("d-none")
         let width=$(".nav-content").outerWidth(true)
     $(".container-setting").animate({left:`-${width}px`},1000)
     $("#close-base-icon").hide(10)
@@ -695,9 +701,10 @@ repasswordInput.addEventListener("keyup",val)
 // Query
 // // opan and close side nav
 $("#base-icon-control ,#close-base-icon").click(function(){
-    
+  
    let left= $(".container-setting").css("left")
    if(left=="0px"){
+    
     let width=$(".nav-content").outerWidth(true)
     $(".container-setting").animate({left:`-${width}px`},1000)
     // animation about links at side navbar start from bottom to top
@@ -709,7 +716,10 @@ $("#base-icon-control ,#close-base-icon").click(function(){
     //  display close-base-icon
    $("#close-base-icon").hide(10)
    $("#base-icon-control").show(10)
-   
+//    
+let a=document.getElementById("exampleModal");
+console.log(a);
+// .setAttribute("data-bs-toggle","none")
    }
    else{
      $(".container-setting").animate({left:`0px`},1000)
@@ -723,6 +733,17 @@ $("#base-icon-control ,#close-base-icon").click(function(){
    //  display close-base-icon
    $("#close-base-icon").show(10)
    $("#base-icon-control").hide(10)
+   
+    // document.getElementById("base-icon-control").classList.add("btn-close")
+    // document.getElementById("base-icon-control").setAttribute("data-bs-dismiss","modal")
+    // document.getElementById("base-icon-control").setAttribute("aria-label","Close")
+    
+    
+    
+   
+    
+    
+//    show x
     
    }
    
