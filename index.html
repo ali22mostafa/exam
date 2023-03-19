@@ -1,0 +1,211 @@
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/all.min.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    
+        <title>Home</title>
+    </head>
+    <body>
+         <!-- <div class="loading-screen d-none  top-0 start-0 end-0 bottom-0  justify-content-center align-items-center">
+            <i class="fa fa-spinner fa-spin fa-5x"></i>
+        </div>  -->
+     
+        <!-- start home page -->
+        <!-- start navbar -->
+        <header>
+            <aside>
+                <nav>
+                    <div class="container-setting bg-danger">
+                        <!-- start first side nav -->
+                        <div class="nav-content  d-flex flex-column justify-content-between ps-4 py-4">
+                            <div class="nav-item  ">
+                                <ul >
+                                    <li><a href="#" id="search">Search</a></li>
+                                    <li><a href="#" id="Categories">Categories</a></li>
+                                    <li><a href="#" id="areas">Area</a></li>
+                                    <li><a href="#" id="Ingredients">Ingredients</a></li>
+                                    <li><a href="#" id="contactUs">Contact Us</a></li>
+                                </ul>
+                            </div>
+                            <div class="nav-contact ">
+                                <div class="nav-side-icon">
+                                    <i class="fa-brands fa-facebook"></i>
+                                    <i class="fa-brands fa-twitter"></i>
+                                    <i class="fa-solid fa-globe"></i>
+                                </div>
+                                <div class="copy-right">
+                                    <p>Copyright Â© 2019 All Rights
+                                        Reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                            <!-- end first side nav -->
+    
+                            <!-- start second side nav -->
+                            <div class="control-setting  d-flex flex-column justify-content-between align-items-center py-4">
+                                <div class="logo-setting d-flex justify-content-center align-items-center">
+                                    <img src="img/logo.png" alt="logo-img" class="w-75">
+                                </div>
+                                <div class="base-icon-control">
+                                    <i class="fa-solid fa-bars fa-2x " id="base-icon-control"></i>
+                                    <i class="fa-solid open-close-icon fa-2x fa-x" id="close-base-icon"></i>
+                                </div>
+                                <div class="second-side-icon d-flex flex-column ">
+                                    <i class="fa-solid fa-globe mb-1"></i>
+                                    <i class="fa-solid fa-share-nodes"></i>
+                                </div>
+                            </div>
+                            <!-- end second side nav -->
+                    </div>
+                </nav>
+            </aside>
+        </header>
+        <!-- ebd navbar -->
+        <section>
+
+            <div class="container pt-3 ">
+
+                <div class="row   gx-4" id="Row">
+
+                    
+
+               
+                </div>
+
+            </div>
+            <!-- <div class="min-vh-100 position-relative">
+
+        
+                <div class="inner-loading-screen top-0 start-0 end-0 bottom-0  justify-content-center align-items-center ">
+                    <i class="fa fa-spinner fa-spin fa-5x"></i>
+            </div>
+       
+            
+        </div> -->
+        <div class="container py-5">
+
+            <div class="row   gy-3 gx-4" id="RowData">
+
+                
+
+           
+            </div>
+        </div>
+
+        </section>
+
+
+
+        <!-- show detailes -->
+        <!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+       
+        <div class="modal-body">
+            <div class="modal-header">
+          
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark "></i></button>
+              </div>
+         <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="" id="img-detailes" alt="" class="w-100 rounded-2">   
+                    <h2 id="title"></h2> 
+                </div>
+                <div class="col-md-8">
+                    <h2>Instructions</h2>
+                    <p id="strInstructions"></p>
+                    <h3 ><span>Area :</span> <span id="area"></span></h3>
+                    <h3 ><span>Category :</span> <span id="Category"></span></h3>
+                    <h3>Recipes :</h3>
+                    <ul id="ingredient" class="list-unstyled d-flex g-3 flex-wrap">
+                       
+                </ul>
+                <h3>Tags :</h3>
+                <ul id="atgs" class="list-unstyled d-flex g-3 flex-wrap">
+                       
+                </ul>
+                <a target="_blank" href="" class="btn btn-success" id="Source">Source</a>
+                <a target="_blank" href="" class="btn btn-danger" id="Youtube">Youtube</a>
+
+                    
+                    
+                </div>
+            </div>
+         </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+        <!-- end home page -->
+        <!-- loading
+ -->
+
+ <div class="loading d-none">
+    <span class="loader"></span>
+</div>
+
+
+<!-- regex -->
+<div class="contact min-vh-100 d-flex justify-content-center align-items-center d-none container" id="regex">
+    <div class="container w-75 text-center">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <input id="nameInput" type="text" class="form-control" placeholder="Enter Your Name">
+                <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span>Special characters and numbers not allowed </span>
+                        <span>hint first let is capita</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input id="emailInput" type="email" class="form-control " placeholder="Enter Your Email">
+                <div id="emailAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Email not valid *exemple@yyy.zzz
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input id="phoneInput" type="text" class="form-control " placeholder="Enter Your Phone">
+                <div id="phoneAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Enter valid Phone Number
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input id="ageInput" type="number" class="form-control " placeholder="Enter Your Age">
+                <div id="ageAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Enter valid age
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input  id="passwordInput"  type="password" class="form-control " placeholder="Enter Your Password">
+                <div id="passwordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Enter valid password *Minimum eight characters, at least one letter and one number:*
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input  id="repasswordInput"  type="password" class="form-control " placeholder="Repassword">
+                <div id="repasswordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                    Enter valid repassword 
+                </div>
+            </div>
+        </div>
+        <button id="submitBtn" disabled class="btn btn-outline-danger px-2 mt-3">Submit</button>
+    </div>
+</div>
+
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.6.3.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
