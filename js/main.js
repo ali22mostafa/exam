@@ -1,20 +1,17 @@
 let rowa= document.getElementById("Row")
-let btnClose=document.querySelector(".btn-close")
-console.log(btnClose);
+// hide moddel when click a link
+let exampleModal=document.getElementById("exampleModal");
 // fetch meals at home
 let finalResult=[]
 async function getMealAtHome(x) {
     // https://www.themealdb.com/api/json/v1/1/filter.php?c
     if(x==" "){
         const loading = document.querySelector(".loading");
-    loading.classList.remove("d-none");
-        
+        loading.classList.remove("d-none"); 
         let data= await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${x}`)
         let result= await data.json();
         finalResult=result.meals;
         loading.classList.add("d-none");
-        console.log( finalResult);
-     
         showDataAtHome()
     }
     else{
@@ -27,10 +24,10 @@ async function getMealAtHome(x) {
         let result= await data.json();
         finalResult=result.meals.splice(0,20);
         loading.classList.add("d-none");
-        console.log( finalResult);
-        rowa.classList.add("d-none")
+        
+        
         showDataAtHome() 
-        rowa.classList.add("d-none")
+        
     }
   
 }
@@ -45,7 +42,7 @@ function showDataAtHome(){
    finalResult.forEach((el)=>{
       cartona+=`
       
-      <div class="col-md-3 cusItem "data-bs-toggle="modal" data-bs-target="#exampleModal" customeId= "${el.idMeal}" >
+      <div class="col-md-4   cusItem"data-bs-toggle="modal" data-bs-target="#exampleModal" customeId= "${el.idMeal}" >
       <div class="home-meals position-relative rounded-2 overflow-hidden" >
           <img src="${el.strMealThumb}" class="w-100" alt="">
           <h1 class="position-absolute name-of-meal special-font">${el.strMeal}</h1>
@@ -58,7 +55,6 @@ function showDataAtHome(){
    rowa.classList.remove("d-none")
    document.getElementById("RowData").classList.remove("d-none")
    document.getElementById("RowData").innerHTML=cartona;
-   
    
    
    getItems()
@@ -143,12 +139,16 @@ document.getElementById("Youtube").setAttribute("href",finResultDetailes[0].strY
 
 let Categories=document.getElementById("Categories")
 Categories.addEventListener("click", (e) =>{
+//    hide model
+    $('#exampleModal').modal('hide');
+    
     document.getElementById("regex").classList.add("d-none")
     let width=$(".nav-content").outerWidth(true)
     $(".container-setting").animate({left:`-${width}px`},1000)
     $("#close-base-icon").hide(10)
    $("#base-icon-control").show(10)
     rowa.classList.add("d-none")
+
     function showCategoryAtHome(){
        
         cartona=``;
@@ -169,18 +169,18 @@ Categories.addEventListener("click", (e) =>{
          `
          
         })
-        rowa.classList.add("d-none")
+        // rowa.classList.add("d-none")
         document.getElementById("RowData").classList.remove("d-none")
         document.getElementById("RowData").innerHTML=cartona;
-        rowa.classList.add("d-none")
+        // rowa.classList.add("d-none")
         getStrCategory()
       
-        rowa.classList.add("d-none")
+        // rowa.classList.add("d-none")
      }
      
      showCategoryAtHome()
      
-     rowa.classList.add("d-none")
+    //  rowa.classList.add("d-none")
 })
 
 
@@ -213,7 +213,7 @@ function getStrCategory(){
        rowa.classList.add("d-none")
        getMealAtHome(itemDate)
        rowa.classList.add("d-none")
-      console.log(itemDate);
+    
        })
     })
     
@@ -223,6 +223,8 @@ function getStrCategory(){
 // data of area
 let Areas=document.getElementById("areas")
 Areas.addEventListener("click", (e) =>{
+    //    hide model
+    $('#exampleModal').modal('hide');
     document.getElementById("regex").classList.add("d-none")
     let width=$(".nav-content").outerWidth(true)
     $(".container-setting").animate({left:`-${width}px`},1000)
@@ -271,7 +273,7 @@ async function getDataofArea(){
    areaData=result.meals;
    
         loading.classList.add("d-none")
-   console.log( areaData);
+   
 
 
 }
@@ -349,6 +351,9 @@ async function getAreaResult(x) {
     // data of Ingredients
 let Ingredients=document.getElementById("Ingredients")
 Ingredients.addEventListener("click", (e) =>{
+    //    hide model
+    $('#exampleModal').modal('hide');
+    
     document.getElementById("regex").classList.add("d-none")
     let width=$(".nav-content").outerWidth(true)
     $(".container-setting").animate({left:`-${width}px`},1000)
@@ -394,9 +399,8 @@ async function getDataofIngredients(){
         loading.classList.remove("d-none")
     let data= await fetch("https://www.themealdb.com/api/json/v1/1/list.php?i=list")
    let result= await data.json();
-   IngredientsData=result.meals.splice(0,20);
-  
-        loading.classList.add("d-none")
+   IngredientsData=result.meals.splice(0,20);  
+     loading.classList.add("d-none")
    console.log( IngredientsData );
 
 
@@ -427,7 +431,7 @@ async function getIngredientResult(x) {
     
         loading.classList.add("d-none")
     showIngradientAtHome()
-    console.log( ingData +"ing");
+   
     
 }
 
@@ -480,6 +484,8 @@ async function getIngredientResult(x) {
 let ali=''
     let contactUs=document.getElementById("contactUs")
     contactUs.addEventListener("click",function(){
+        //    hide model
+    $('#exampleModal').modal('hide');
         let width=$(".nav-content").outerWidth(true)
         $(".container-setting").animate({left:`-${width}px`},1000)
         $("#close-base-icon").hide(10)
@@ -500,6 +506,8 @@ let ali=''
   
     let search=document.getElementById("search")
     search.addEventListener("click",function(){
+        //    hide model
+    $('#exampleModal').modal('hide');
         document.getElementById("regex").classList.add("d-none")
         let width=$(".nav-content").outerWidth(true)
     $(".container-setting").animate({left:`-${width}px`},1000)
@@ -734,17 +742,7 @@ console.log(a);
    $("#close-base-icon").show(10)
    $("#base-icon-control").hide(10)
    
-    // document.getElementById("base-icon-control").classList.add("btn-close")
-    // document.getElementById("base-icon-control").setAttribute("data-bs-dismiss","modal")
-    // document.getElementById("base-icon-control").setAttribute("aria-label","Close")
-    
-    
-    
-   
-    
-    
-//    show x
-    
+ 
    }
    
     
@@ -755,5 +753,12 @@ $(".container-setting").css({left:`-${width}px`})
 
 
 
+
+// links
+$(".nav-link").click(function(){
+
+    $(this).addClass("active")
+    $(this).parent().siblings().children().removeClass("active")
+})
 
 

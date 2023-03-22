@@ -5,7 +5,7 @@ body{
 
 /* start home */
 .container-setting{
-    width: 45vh;
+    width: 300px;
     display:flex;
     justify-content: center;
     align-items: flex-start;
@@ -15,12 +15,12 @@ body{
 
 }
 .nav-content{
-    width: 78%;
+    width: 230px;
     min-height: 100vh;
     background-color: #0D0D0D;
 }
 .control-setting{
-    width: 22%;
+    width: 70px;
     min-height: 100vh;
     background-color: #fff;
     
@@ -33,6 +33,11 @@ body{
     
    
 }
+/* #exampleModal
+{
+   
+    z-index: ;
+} */
 #close-base-icon{
     display: none;
 }
@@ -48,6 +53,9 @@ body{
 .copy-right{
     color:#f9f6f6 !important ; 
     
+}
+.nav-item ul li a.active{
+    color: crimson !important;
 }
 
 .nav-item ul{
@@ -80,7 +88,7 @@ body{
     cursor: pointer;
 
 }
-.col-md-3:hover .name-of-meal{
+.col-md-4:hover .name-of-meal{
     top: 0;
     cursor: pointer;
 
@@ -192,5 +200,7 @@ body{
         width: 80%;
         margin: 10px auto;
     }
-    
+    .special-marign{
+        margin-left: 3.8rem;
+    }
  }
