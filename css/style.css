@@ -30,6 +30,15 @@ body{
     color: #f9f6f6 !important;
     position: relative;
     top: 300px;
+
+    transition: color .3s;
+    
+   
+}
+.nav-item ul li a:hover{
+    
+    color: crimson !important;
+    
     
    
 }
@@ -89,6 +98,11 @@ body{
 
 }
 .col-md-4:hover .name-of-meal{
+    top: 0;
+    cursor: pointer;
+
+}
+.col-md-3:hover .name-of-meal{
     top: 0;
     cursor: pointer;
 
@@ -202,5 +216,8 @@ body{
     }
     .special-marign{
         margin-left: 3.8rem;
+    }
+    .search-media{
+        margin-left: 1rem; 
     }
  }

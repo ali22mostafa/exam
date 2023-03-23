@@ -1,4 +1,5 @@
 let rowa= document.getElementById("Row")
+
 // hide moddel when click a link
 let exampleModal=document.getElementById("exampleModal");
 // fetch meals at home
@@ -22,12 +23,14 @@ async function getMealAtHome(x) {
         let data= await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${x}`)
         
         let result= await data.json();
+        rowa.classList.add("d-none")
         finalResult=result.meals.splice(0,20);
+       
         loading.classList.add("d-none");
         
         
         showDataAtHome() 
-        
+        rowa.classList.add("d-none")
     }
   
 }
@@ -153,6 +156,7 @@ Categories.addEventListener("click", (e) =>{
        
         cartona=``;
         categoryData.forEach((el)=>{
+         
             getDataofCategories()
            cartona+=`
            
@@ -171,9 +175,11 @@ Categories.addEventListener("click", (e) =>{
         })
         // rowa.classList.add("d-none")
         document.getElementById("RowData").classList.remove("d-none")
+        
         document.getElementById("RowData").innerHTML=cartona;
         // rowa.classList.add("d-none")
         getStrCategory()
+       
       
         // rowa.classList.add("d-none")
      }
@@ -209,8 +215,9 @@ function getStrCategory(){
     StrCategory.forEach((el)=>{
 
       el.addEventListener("click",function (e) {
+        
        let itemDate=this.getAttribute("strCategory")
-       rowa.classList.add("d-none")
+       
        getMealAtHome(itemDate)
        rowa.classList.add("d-none")
     
@@ -237,7 +244,7 @@ Areas.addEventListener("click", (e) =>{
         areaData.forEach((el)=>{
            cartona+=`
            
-           <div class="col-md-3 cusItem getStrArea" strArea="${el.strArea}" >
+           <div class="col-md-4 cusItem getStrArea" strArea="${el.strArea}" >
            <div class="home-meals " >
                <div class="container text-center custome-color">
                <i class="fa-solid fa-house-laptop fa-4x text-center"></i>
@@ -312,7 +319,7 @@ async function getAreaResult(x) {
         ArData.forEach((el)=>{
            cartona+=`
            
-           <div class="col-md-3 cusAreaItem getStrCategory" AreaId="${el.idMeal}"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+           <div class="col-md-4 cusAreaItem getStrCategory" AreaId="${el.idMeal}"  data-bs-toggle="modal" data-bs-target="#exampleModal">
            <div class="home-meals position-relative rounded-2 overflow-hidden" >
                <img src="${el.strMealThumb}" class="w-100" alt="">
                <div class="position-absolute name-of-meal d-flex align-items-center">
@@ -367,7 +374,7 @@ Ingredients.addEventListener("click", (e) =>{
             getDataofIngredients()
            cartona+=`
            
-           <div class="col-md-3 cusItem getStrIngredients" strIngredients="${el.strIngredient}" >
+           <div class="col-md-4 cusItem getStrIngredients" strIngredients="${el.strIngredient}" >
            <div class="home-meals text-center " >
                <div class="container text-center custome-color">
                <i class="fa-solid fa-drumstick-bite fa-4x text-center"></i>
@@ -441,7 +448,7 @@ async function getIngredientResult(x) {
         ingData.forEach((el)=>{
            cartona+=`
            
-           <div class="col-md-3 cusIngItem getStrCategory" IngreId="${el.idMeal}"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+           <div class="col-md-4 cusIngItem getStrCategory" IngreId="${el.idMeal}"  data-bs-toggle="modal" data-bs-target="#exampleModal">
            <div class="home-meals position-relative rounded-2 overflow-hidden" >
                <img src="${el.strMealThumb}" class="w-100" alt="">
                <div class="position-absolute name-of-meal d-flex  align-items-center">
@@ -478,7 +485,7 @@ async function getIngredientResult(x) {
      
 
 
-
+ 
 
 // contact us
 let ali=''
@@ -516,11 +523,11 @@ let ali=''
 let cartona=`
 <div class="container special-width">
                         <div class="row ">
-                            <div class="col-md-6">
+                            <div class="col-md-6 search-media">
                                 <input id="searchName" onkeyup="searchByName(this.value)" class="form-control bg-transparent text-white" type="text" placeholder="Search By Name">
                               </div>
                              
-                              <div class="col-md-6">
+                              <div class="col-md-6 search-media">
                                 <input  maxlength="1" id="searchF" onkeyup="searchByFirstLet(this.value)"  class="form-control bg-transparent text-white" type="text" placeholder="Search By First Letter">
                               </div>
                                 
