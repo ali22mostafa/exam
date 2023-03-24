@@ -206,8 +206,7 @@ body{
     }
  }
 
-
- @media screen and (max-width:767px) {
+ /* @media screen and (max-width:888px) and (min-width:768px){
 
     #searchName,#searchF{
         margin-bottom: .5rem;
@@ -219,5 +218,41 @@ body{
     }
     .search-media{
         margin-left: 1rem; 
+    }
+ } */
+
+ @media screen and (max-width:1474px) {
+
+    #searchName,#searchF{
+        margin-bottom: .5rem;
+        width: 80%;
+        margin: 10px auto;
+    }
+    .special-marign{
+        margin-left: 3.8rem;
+    }
+    /* .search-media{
+        margin-left: 1rem; 
+    } */
+ }
+
+ @media screen and (max-width:767px) {
+
+    
+    .special-marign{
+        margin-left: 3.8rem;
+    }
+    .search-media{
+        margin-left: 1rem; 
+    }
+    .contact{
+        margin-left: 15%;
+    }
+ }
+ @media screen and (max-width:664px) {
+
+    
+    .contact{
+        margin-left: 7%;
     }
  }
