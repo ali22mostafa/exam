@@ -91,6 +91,10 @@ async function getDeailes(id){
     loading.classList.add("d-none");
        
     displayDetailes()
+   
+       
+    
+   
 }
 
 
@@ -133,7 +137,14 @@ function displayDetailes() {
 document.getElementById("Source").setAttribute("href",finResultDetailes[0].strSource)
 document.getElementById("Youtube").setAttribute("href",finResultDetailes[0].strYoutube)
             
-            
+if (search.classList.contains("active")==true) {
+    rowa.classList.add("d-block")
+        rowa.classList.remove("d-none") 
+  
+   }          
+   else{
+    console.log("false");
+   }
 
 }
 
@@ -538,6 +549,7 @@ let cartona=`
 rowa.classList.remove("d-none")
 rowa.innerHTML=cartona;
 
+
 document.getElementById("RowData").classList.add("d-none")
 
 
@@ -551,8 +563,9 @@ document.getElementById("RowData").classList.add("d-none")
             finalResult=result.meals;
             
         loading.classList.add("d-none")
+        // rowa.classList.add("d-block")
                 showDataAtHome() 
-            
+                
             
             console.log( finalResult);
        
@@ -567,8 +580,9 @@ document.getElementById("RowData").classList.add("d-none")
         finalResult=result.meals;
        
         loading.classList.add("d-none")
+        // rowa.classList.add("d-block")
             showDataAtHome() 
-        
+           
         
         console.log( finalResult);
    
